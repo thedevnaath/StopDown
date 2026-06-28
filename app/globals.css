@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Inter font from Google Fonts (or use @next/font/google in components) */
+/* For global styles, we'll assume Inter is loaded or use system-ui */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); */
+
+/* Neobrutalism Base Styles */
+:root {
+  --color-background: #f0f0f0; /* Light grey */
+  --color-text: #1a1a1a; /* Dark black */
+  --color-primary: #007bff; /* Bold blue for accents */
+  --color-secondary: #ffc107; /* Bright yellow for secondary accents */
+  --color-border: #333333; /* Dark border color */
+  --color-shadow: #333333; /* Dark shadow color */
+}
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  margin: 0;
+  line-height: 1.5;
+  border: 2px solid var(--color-border); /* Global border for the body */
+  padding: 1rem; /* Add some padding so the body border is visible */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  border-color: var(--color-border); /* Ensure borders across elements use the defined border color */
+}
+
+/* Global shadow utility for Neobrutalism effect */
+.neobrutal-shadow {
+  box-shadow: 4px 4px 0px var(--color-shadow);
+  border: 2px solid var(--color-border);
+  transition: all 0.1s ease-in-out;
+}
+
+.neobrutal-shadow:hover {
+  box-shadow: 2px 2px 0px var(--color-shadow); /* Slight shift on hover */
+  transform: translate(2px, 2px);
+}
+
+/* Optional: Button base style for consistency */
+button,
+[role="button"] {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--color-border);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 3px 3px 0px var(--color-shadow);
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover,
+[role="button"]:hover {
+  background-color: var(--color-secondary);
+  box-shadow: 1px 1px 0px var(--color-shadow);
+  transform: translate(2px, 2px);
+}
+
+button:active,
+[role="button"]:active {
+  background-color: var(--color-primary);
+  box-shadow: 0px 0px 0px var(--color-shadow);
+  transform: translate(4px, 4px);
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border); /* Neobrutalist touch */
+  padding-bottom: 0.25em;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+/* Link styles */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-primary);
+  transition: color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 1rem;
+  box-shadow: 2px 2px 0px var(--color-shadow);
+  transition: all 0.1s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0px 0px 0px var(--color-shadow);
+  transform: translate(2px, 2px);
+}
